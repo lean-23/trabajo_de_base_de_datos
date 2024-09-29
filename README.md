@@ -36,3 +36,4 @@ CREATE TABLE condenado (
 ```
 # importar
 ![This is an alt text.](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/imoirtar%20csv.png) 
+![. ](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/importar%20datos.png).
