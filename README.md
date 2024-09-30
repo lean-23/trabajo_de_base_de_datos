@@ -1,4 +1,5 @@
 # base de datos de condenados
+## introduccion
 Este repositorio contiene documentacion de la base de datos de los internos condenados  del sevicio penintenciario del la nacion,
 extraido de la pagina del  ministerio de  justicia  de la nacion
 Lo primero que realice fue limpiar los datos de la planilla y pasarlo
@@ -34,6 +35,63 @@ CREATE TABLE condenado (
 	unidad_provincia_id VARCHAR(225) 
 )
 ```
-# importar
+#### importar
 ![This is an alt text.](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/imoirtar%20csv.png) 
 ![. ](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/importar%20datos.png).
+
+#creo las tablas con comandos:
+``` sql
+CREATE TABLE profesion(code_prof INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+profesion VARCHAR(45) NOT NULL );
+```
+e inserto los datos de la tabla principal a la tabla profesion con el siguiente comando:
+``` sql
+INSERT INTO profesion (desc_prof)
+SELECT DISTINCT profesión
+FROM condenado;
+```
+a continuacion se muestra como inserte y relacione la tabla unidad que contiene la clave secundaria de la tabla provincias
+``` sql
+ CREATE TABLE provincias(
+   code_uni INT (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   nom_prov VARCHAR(45) NOT NULL);
+```
+```sql
+  CREATE TABLE unidad(
+   code_uni INT (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   nom_uni VARCHAR(45) NOT NULL,
+   uni_prov VARCHAR (45));
+```
+``` sql
+INSERT INTO unidad (nom_uni,uni_prov)
+SELECT DISTINCT unidad, unidad_provincia_id
+FROM condenado;
+```
+cambio tipo de datos
+```sql
+ALTER TABLE unidad 
+MODIFY COLUMN uni_prov INT(11);
+```
+agrego la clave secundaria
+```sql
+ALTER TABLE unidad
+ADD CONSTRAINT fk_provincias FOREIGN KEY (uni_prov)
+        REFERENCES provincias (code_prov);
+```
+
+luego cambio el nombre de la columna en la tabla condenado
+```sql
+ALTER TABLE condenado 
+CHANGE  COLUMN unidad_provincia_id cond_prov VARCHAR(45);
+```
+actualizo los datos
+```sql
+UPDATE condenado
+SET  cond_prov = '6'
+WHERE cond_prov = 'Buenos Aires';
+```
+cambio el tipo de datos
+```sql
+ALTER TABLE condenado 
+MODIFY COLUMN cond_prov INT(11);
+```
