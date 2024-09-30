@@ -142,13 +142,24 @@ La base de datos cuenta con 10 tablas
        
 
 la tabla principal cuenta con aproximadamente 18 con culumnas que son las siguietes  
+cond_code = clave primaria de la tabla    
+cond_nom = nombre del condenado      
+cond_ape = apellido del condenado  
+cond_edad = edad    
+cond_gene = genero  
+cond_nac = nacionalidad   
+cond_uni = unidad donde se encuentra el condenado    
+cond_prov = provincia a la cual corresponde esa undiad     
+cond_prof = profesion que ejercia el condenado   
+cond_deli  = delito cometido     
+cond_juri = jurisdiccion del delito cometido 
 
 cond_fnac = fecha nacimiento    
 cond_fsfi = fecha de sentencia firme    
 cond_fing = fecha de ingreso    
 cond_anpe = años de penas      
 cond_dipe = dias de penas       
-cond_mepe = meses pena      
+cond_mepe = meses pena       
 
 ## Clonacion del repositorio
 
