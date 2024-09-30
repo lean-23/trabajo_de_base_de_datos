@@ -162,9 +162,29 @@ cond_anpe = años de penas
 cond_dipe = dias de penas       
 cond_mepe = meses pena       
 
-## Clonacion del repositorio
+## Insatalacion
 Para la clonacion del repositrio hacer lo siguiente:    
-Al ingresar al git te encontraras con el repositorio "trabajo_de_base_de_datos"
-copiar  el enlace 
+Al ingresar al git te encontraras con el repositorio "trabajo_de_base_de_datos"  
+copiar  el enlace  
+luego en git bash usar el siguiente comando
+``` bash
+git clone https://github.com/lean-23/trabajo_de_base_de_datos.git
+```
+
+```bash
+cd trabajo_de_base_de_datos
+```
+en el inicio buscar la carpeta con el nombre trabajo_de_base_de_datos y ahi encontraras la base de datos   
+y por ultimo ejecutarla en heidisql
+## uso 
+
+
+## Bibliografias 
+https://datos.jus.gob.ar/dataset/internos-del-servicio-penitenciario-federal-spf
+https://parzibyte.me/blog/2019/11/12/agregar-columna-llave-foranea-fk-mysql/#google_vignette
+
+https://www.1keydata.com/es/sql/
+https://es.stackoverflow.com/questions/465949/cambiar-un-date-format-mysql
+
 
 
