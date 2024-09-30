@@ -128,3 +128,27 @@ UPDATE condenado
 SET fecha_sentencia_firme = STR_TO_DATE(fecha_sentencia_firme, '%d/%m/%Y');
 ```
 ## Descripcion 
+La base de datos cuenta con 10 tablas    
+#Condenado tabla princial donde se ejecuntan todas las consultas           
+#Unidad        
+#Provincias        
+#Profesion          
+#Generos           
+#Juzgado tabla que no se utiliza      
+#Delito        
+#Penas       
+#Nacionalidad        
+#Jurisdiccion      
+       
+
+la tabla principal cuenta con aproximadamente 18 con culumnas que son las siguietes  
+
+cond_fnac = fecha nacimiento    
+cond_fsfi = fecha de sentencia firme    
+cond_fing = fecha de ingreso    
+cond_anpe = años de penas      
+cond_dipe = dias de penas       
+cond_mepe = meses pena      
+
+## Clonacion del repositorio
+
