@@ -1,5 +1,5 @@
-# base de datos de condenados
-## introduccion
+# Base de datos de condenados
+## 1 introduccion
 Este repositorio contiene documentacion de la base de datos de los internos condenados  del sevicio penintenciario del la nacion,
 extraido de la pagina del  ministerio de  justicia  de la nacion
 Lo primero que realice fue limpiar los datos de la planilla y pasarlo
@@ -13,10 +13,10 @@ de la base de datos y es la siguiente:
 [diagrama de base de datos]
 
 Luego:
-### 1)cree la base de datos
+### A)cree la base de datos
 ![This is an alt text.](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/tp-1.png)
 
-##### 2) la tabala general para inportar el archivo csv
+##### B) la tabala general para inportar el archivo csv
 ```sql
 CREATE TABLE condenado (
 	unidad VARCHAR(225), lpu INT(11),
