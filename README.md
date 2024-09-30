@@ -95,3 +95,11 @@ cambio el tipo de datos
 ALTER TABLE condenado 
 MODIFY COLUMN cond_prov INT(11);
 ```
+
+#agrego clave primaria a la tabla de condenado
+```sql
+ALTER TABLE condenado 
+CHANGE  COLUMN lpu code_cond INT(11);
+
+ALTER TABLE condenado ADD PRIMARY KEY (code_cond);
+```
