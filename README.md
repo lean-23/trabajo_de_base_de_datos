@@ -103,3 +103,4 @@ CHANGE  COLUMN lpu code_cond INT(11);
 
 ALTER TABLE condenado ADD PRIMARY KEY (code_cond);
 ```
+![. ](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/borrar_columna.png)
