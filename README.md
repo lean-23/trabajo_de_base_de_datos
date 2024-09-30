@@ -128,7 +128,7 @@ UPDATE condenado
 SET fecha_sentencia_firme = STR_TO_DATE(fecha_sentencia_firme, '%d/%m/%Y');
 ```
 ## Descripcion      
-![tabla sin usar. ]() 
+
 La base de datos cuenta con 10 tablas    
 #Condenado tabla princial donde se ejecuntan todas las consultas           
 #Unidad        
@@ -163,4 +163,8 @@ cond_dipe = dias de penas
 cond_mepe = meses pena       
 
 ## Clonacion del repositorio
+Para la clonacion del repositrio hacer lo siguiente:    
+Al ingresar al git te encontraras con el repositorio "trabajo_de_base_de_datos"
+copiar  el enlace 
+
 
