@@ -10,10 +10,10 @@ segundo realice las primeras tablas de prueba
 hasta que termine el diagrama
 de la base de datos y es la siguiente:
 
-[diagrama de base de datos]
+![diagrama de base de datos.](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/diagrama_bd.png)
 
 Luego:
-### A)cree la base de datos
+#### A)cree la base de datos
 ![This is an alt text.](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/tp-1.png)
 
 ##### B) la tabala general para inportar el archivo csv
@@ -35,22 +35,22 @@ CREATE TABLE condenado (
 	unidad_provincia_id VARCHAR(225) 
 )
 ```
-#### importar
+#### C) importar los datos
 ![This is an alt text.](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/imoirtar%20csv.png) 
 ![. ](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/importar%20datos.png).
 
-#creo las tablas con comandos:
+#### D)creo las tablas con comandos:
 ``` sql
 CREATE TABLE profesion(code_prof INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 profesion VARCHAR(45) NOT NULL );
 ```
-e inserto los datos de la tabla principal a la tabla profesion con el siguiente comando:
+#### E) inserto los datos de la tabla principal a la tabla profesion con el siguiente comando:
 ``` sql
 INSERT INTO profesion (desc_prof)
 SELECT DISTINCT profesión
 FROM condenado;
 ```
-a continuacion se muestra como inserte y relacione la tabla unidad que contiene la clave secundaria de la tabla provincias
+#### F)a continuacion se muestra como inserte y relacione la tabla unidad que contiene la clave secundaria de la tabla provincias
 ``` sql
  CREATE TABLE provincias(
    code_uni INT (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -67,47 +67,47 @@ INSERT INTO unidad (nom_uni,uni_prov)
 SELECT DISTINCT unidad, unidad_provincia_id
 FROM condenado;
 ```
-cambio tipo de datos
+#### G) cambio tipo de datos
 ```sql
 ALTER TABLE unidad 
 MODIFY COLUMN uni_prov INT(11);
 ```
-agrego la clave secundaria
+##### H)agrego la clave secundaria
 ```sql
 ALTER TABLE unidad
 ADD CONSTRAINT fk_provincias FOREIGN KEY (uni_prov)
         REFERENCES provincias (code_prov);
 ```
 
-luego cambio el nombre de la columna en la tabla condenado
+#### I) luego cambio el nombre de la columna en la tabla condenado
 ```sql
 ALTER TABLE condenado 
 CHANGE  COLUMN unidad_provincia_id cond_prov VARCHAR(45);
 ```
-actualizo los datos
+#### J) actualizo los datos
 ```sql
 UPDATE condenado
 SET  cond_prov = '6'
 WHERE cond_prov = 'Buenos Aires';
 ```
-cambio el tipo de datos
+#### K) cambio el tipo de datos
 ```sql
 ALTER TABLE condenado 
 MODIFY COLUMN cond_prov INT(11);
 ```
 
-#agrego clave primaria a la tabla de condenado
+#### L)agrego clave primaria a la tabla de condenado
 ```sql
 ALTER TABLE condenado 
 CHANGE  COLUMN lpu code_cond INT(11);
 
 ALTER TABLE condenado ADD PRIMARY KEY (code_cond);
 ```
-### elimino columna estan de mas
+#### elimino columna estan de mas
 ![. ](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/borrar_columna.png)
 ![. ](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/borrar_columna1.png)
 
-#elimino tablas que estan de mas
+#### elimino tablas que estan de mas
 ```sql
 ALTER TABLE condenado DROP situacion_procesal;
 ALTER TABLE condenado DROP unidad_provincia;
@@ -116,18 +116,18 @@ ALTER TABLE condenado DROP estado_civil;
 ALTER TABLE condenado DROP provincia_nacimiento;
 ALTER TABLE condenado DROP subgrupo;
 ```
-#actualizo los datos
+#### actualizo los datos
 ```sql
 UPDATE provincia
 SET nom_prov = 'Ciudad de BS AS'
 WHERE code_prov = 1;
 ```
-#cambio el tipo de dato varchar a date
+#### cambio el tipo de dato varchar a date
 ```sql
 UPDATE condenado
 SET fecha_sentencia_firme = STR_TO_DATE(fecha_sentencia_firme, '%d/%m/%Y');
 ```
-## Descripcion      
+## 2) Descripcion      
 
 La base de datos cuenta con 10 tablas    
 #Condenado tabla princial donde se ejecuntan todas las consultas           
@@ -142,7 +142,7 @@ La base de datos cuenta con 10 tablas
 #Jurisdiccion      
        
 
-la tabla principal cuenta con aproximadamente 18 con culumnas que son las siguietes  
+La tabla principal cuenta con aproximadamente 18 con culumnas que son las siguietes  
 cond_code = clave primaria de la tabla    
 cond_nom = nombre del condenado      
 cond_ape = apellido del condenado  
@@ -162,7 +162,7 @@ cond_anpe = años de penas
 cond_dipe = dias de penas       
 cond_mepe = meses pena       
 
-## Insatalacion
+## 3) Insatalacion
 Para la clonacion del repositrio hacer lo siguiente:    
 Al ingresar al git te encontraras con el repositorio "trabajo_de_base_de_datos"  
 copiar  el enlace  
@@ -174,12 +174,12 @@ git clone https://github.com/lean-23/trabajo_de_base_de_datos.git
 ```bash
 cd trabajo_de_base_de_datos
 ```
-en el inicio buscar la carpeta con el nombre trabajo_de_base_de_datos y ahi encontraras la base de datos   
-y por ultimo ejecutarla en heidisql
-## uso 
+En el inicio buscar la carpeta con el nombre trabajo_de_base_de_datos ,ahi encontraras la base de datos    
+Por ultimo ejecutarla en heidisql
+## 4) uso 
 
 
-## Bibliografias 
+## 5) Bibliografias 
 https://datos.jus.gob.ar/dataset/internos-del-servicio-penitenciario-federal-spf
 https://parzibyte.me/blog/2019/11/12/agregar-columna-llave-foranea-fk-mysql/#google_vignette
 
