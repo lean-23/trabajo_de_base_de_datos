@@ -103,4 +103,28 @@ CHANGE  COLUMN lpu code_cond INT(11);
 
 ALTER TABLE condenado ADD PRIMARY KEY (code_cond);
 ```
+### elimino columna estan de mas
 ![. ](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/borrar_columna.png)
+![. ](https://github.com/lean-23/trabajo_de_base_de_datos/blob/main/borrar_columna1.png)
+
+#elimino tablas que estan de mas
+```sql
+ALTER TABLE condenado DROP situacion_procesal;
+ALTER TABLE condenado DROP unidad_provincia;
+ALTER TABLE condenado DROP provincia_nacimiento_id;
+ALTER TABLE condenado DROP estado_civil;
+ALTER TABLE condenado DROP provincia_nacimiento;
+ALTER TABLE condenado DROP subgrupo;
+```
+#actualizo los datos
+```sql
+UPDATE provincia
+SET nom_prov = 'Ciudad de BS AS'
+WHERE code_prov = 1;
+```
+#cambio el tipo de dato varchar a date
+```sql
+UPDATE condenado
+SET fecha_sentencia_firme = STR_TO_DATE(fecha_sentencia_firme, '%d/%m/%Y');
+```
+## Descripcion 
