@@ -1,4 +1,11 @@
 # Base de datos de condenados
+## Referencias 
+  1) introduccion    
+  2) Desscripcion    
+  3) Instalacion    
+  4) Uso     
+  5) Bibliografias   
+     
 ## 1 introduccion
 Este repositorio contiene documentacion de la base de datos de los internos condenados  del sevicio penintenciario del la nacion,
 extraido de la pagina del  ministerio de  justicia  de la nacion
@@ -177,13 +184,31 @@ cd trabajo_de_base_de_datos
 En el inicio buscar la carpeta con el nombre trabajo_de_base_de_datos ,ahi encontraras la base de datos    
 Por ultimo ejecutarla en heidisql
 ## 4) uso 
+ ```sql
+SELECT cond_code AS legajo,cond_ape AS apellido, cond_nom AS nombre, 
+desc_deli AS delito,
+nom_uni AS unidad 
+FROM condenado
 
+INNER JOIN delito
+ON condenado.cond_deli = delito.code_deli
+JOIN profesion
+ON  condenado.cond_prof = profesion.code_prof
+JOIN unidad ON condenado.cond_uni = unidad.code_uni
+WHERE profesion.desc_prof = 'economista';
+```
+esta sentencia te deberia devolver el numero de legajo,nombre,apellido,delito cometido y unidad donde esta alojado los condenados cuya profesion sea economista
 
 ## 5) Bibliografias 
+link de la base de datos:   
 https://datos.jus.gob.ar/dataset/internos-del-servicio-penitenciario-federal-spf
-https://parzibyte.me/blog/2019/11/12/agregar-columna-llave-foranea-fk-mysql/#google_vignette
+Pagina que use para hacer agregar clave secundaria con comandos      
+https://parzibyte.me/blog/2019/11/12/agregar-columna-llave-foranea-fk-mysql/#google_vignette   
+  
+Pagina que use para todos los comandos   
+https://www.1keydata.com/es/sql/     
 
-https://www.1keydata.com/es/sql/
+Pagina que use para pasar una columna de varchar a date   
 https://es.stackoverflow.com/questions/465949/cambiar-un-date-format-mysql
 
 
