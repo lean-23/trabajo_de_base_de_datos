@@ -127,7 +127,8 @@ WHERE code_prov = 1;
 UPDATE condenado
 SET fecha_sentencia_firme = STR_TO_DATE(fecha_sentencia_firme, '%d/%m/%Y');
 ```
-## Descripcion 
+## Descripcion      
+![tabla sin usar. ]() 
 La base de datos cuenta con 10 tablas    
 #Condenado tabla princial donde se ejecuntan todas las consultas           
 #Unidad        
