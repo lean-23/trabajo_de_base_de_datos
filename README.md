@@ -126,7 +126,7 @@ ALTER TABLE condenado DROP subgrupo;
 #### actualizo los datos
 ```sql
 UPDATE provincia
-SET nom_prov = 'Ciudad de BS AS'
+SET nom_prov = 'Ciudad de Autonoma de Bs As'
 WHERE code_prov = 1;
 ```
 #### cambio el tipo de dato varchar a date
